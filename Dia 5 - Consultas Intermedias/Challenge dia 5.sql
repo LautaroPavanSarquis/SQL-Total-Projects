@@ -11,16 +11,18 @@ WHERE serie_id IN (
 ;
 
 select 
-	nombre,
-    year(fecha_nacimiento) as "Año Nacimiento",
-	case
-		when year(fecha_nacimiento) between 1946 and 1964 
+nombre,
+ year(fecha_nacimiento) as "Año Nacimiento",
+	
+case
+	
+	when year(fecha_nacimiento) between 1946 and 1964 
         then "Baby Boomers"
 		
         when year(fecha_nacimiento) between 1965 and 1980 
         then "Generación X"
       
-		when year(fecha_nacimiento) between 1965 and 1980 
+	when year(fecha_nacimiento) between 1965 and 1980 
         then "Generación X"
         
         when year(fecha_nacimiento) between 1981 and 1996 
@@ -32,6 +34,7 @@ select
         Else "Silent Generation"
         
         End as Generacion
+	
 from actores
 order by nombre
 ;
